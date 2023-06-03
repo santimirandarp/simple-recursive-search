@@ -1,4 +1,5 @@
-import { type SearchOptions } from "../types";
+import { type SearchOptions } from '../types';
+
 export function makeOptions(options: Partial<SearchOptions>): SearchOptions {
   return {
     filter: null,

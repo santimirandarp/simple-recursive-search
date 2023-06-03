@@ -1,17 +1,18 @@
-import { opendir } from "node:fs/promises";
-import { join } from "node:path";
-import { SearchOptions } from "../types";
+import { opendir } from 'node:fs/promises';
+import { join } from 'node:path';
+
+import { SearchOptions } from '../types';
 
 export async function innerSearch(
   baseDirectoryPath: string,
   filepaths: string[],
-  options: SearchOptions
+  options: SearchOptions,
 ) {
   const baseDir = await opendir(baseDirectoryPath, {
-    encoding: "utf8",
+    encoding: 'utf8',
   });
   for await (const dir of baseDir) {
-    const skipDot = !options.dotFiles && dir.name.startsWith(".");
+    const skipDot = !options.dotFiles && dir.name.startsWith('.');
     if (skipDot) continue;
 
     const path = join(baseDirectoryPath, dir.name);
@@ -20,7 +21,7 @@ export async function innerSearch(
       const passesFilter = options.filter ? options.filter(dir.name) : true;
       if (passesFilter) filepaths.push(path);
     } else if (dir.isDirectory()) {
-      if (options.directories === true) {
+      if (options.directories) {
         filepaths.push(path);
       }
       await innerSearch(path, filepaths, options);

@@ -1,5 +1,5 @@
-import { makeOptions, innerSearch } from "./utils/";
-import { type SearchOptions } from "./types";
+import { type SearchOptions } from './types';
+import { makeOptions, innerSearch } from './utils';
 /**
  * Relative to the base directory.
  */
@@ -12,13 +12,13 @@ type RelativePath = string;
  */
 export async function search(
   baseDirectoryPath: string,
-  options: Partial<SearchOptions> = {}
+  options: Partial<SearchOptions> = {},
 ): Promise<RelativePath[]> {
   const filepaths: string[] = [];
   const results = await innerSearch(
     baseDirectoryPath,
     filepaths,
-    makeOptions(options)
+    makeOptions(options),
   );
   return results;
 }
