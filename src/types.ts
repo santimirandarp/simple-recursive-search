@@ -1,7 +1,18 @@
 export type SearchOptions = {
-  /** With access to the full path */
+  /**
+   * default: null
+   */
   filter: ((path: string) => boolean) | null;
+  /**
+   * default: false
+   */
   directories: boolean;
+  /**
+   * default: true
+   */
   files: boolean;
+  /**
+   * default: false
+   */
   dotFiles: boolean;
 };

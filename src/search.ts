@@ -7,6 +7,7 @@ type RelativePath = string;
 /**
  * Recursively search and retrieve full paths.
  * @param baseDirectoryPath - path to the base directory
+ * @param options - search options {@link SearchOptions}
  * @returns array of paths
  */
 export async function search(
