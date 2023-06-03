@@ -1,0 +1,45 @@
+{
+  "name": "simple-recursive-search",
+  "version": "0.0.0",
+  "description": "Get paths to file and directories",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "keywords": [],
+  "author": "Santi Miranda",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "prettier": "prettier --check src --config .config/.prettierrc.json",
+    "eslint": "eslint src --cache --config .config/.eslintrc.json",
+    "check-types": "tsc --noEmit --project .config/tsconfig.json",
+    "test-only": "vitest --run --coverage --config .config/vite.config.ts",
+    "test": "npm run test-only && npm run eslint && npm run prettier && npm run check-types",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prettier-write": "prettier --write src --config .config/.prettierrc.json",
+    "prepack": "npm run tsc",
+    "tsc": "npm run clean && npm run tsc-cjs",
+    "tsc-cjs": "tsc --project .config/tsconfig.cjs.json",
+    "clean": "rimraf lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santimirandarp/simple-recursive-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/santimirandarp/simple-recursive-search/issues"
+  },
+  "homepage": "https://github.com/santimirandarp/simple-recursive-search#readme",
+  "devDependencies": {
+    "@types/jest": "*",
+    "eslint": "*",
+    "eslint-config-cheminfo-typescript": "*",
+    "vitest": "*",
+    "prettier": "*",
+    "rimraf": "*",
+    "typescript": "*",
+    "@vitest/coverage-c8": "*"
+  }
+}
