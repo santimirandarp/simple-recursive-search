@@ -1,10 +1,10 @@
 {
   "name": "simple-recursive-search",
   "version": "0.0.0",
-  "description": "Get paths to file and directories",
+  "description": "Recursively read directories but simple.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "keywords": [],
+  "keywords": ["recursive readdir", "find files", "recursive", "find and filter"],
   "author": "Santi Miranda",
   "license": "MIT",
   "files": [
