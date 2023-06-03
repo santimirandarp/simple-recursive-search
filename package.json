@@ -33,13 +33,13 @@
   },
   "homepage": "https://github.com/santimirandarp/simple-recursive-search#readme",
   "devDependencies": {
-    "@types/jest": "*",
+    "@types/jest": "^29.5.2",
+    "@vitest/coverage-c8": "*",
     "eslint": "*",
     "eslint-config-cheminfo-typescript": "*",
-    "vitest": "*",
     "prettier": "*",
     "rimraf": "*",
     "typescript": "*",
-    "@vitest/coverage-c8": "*"
+    "vitest": "*"
   }
 }
