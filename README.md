@@ -7,6 +7,8 @@
 
 Get paths to file and directories.
 
+This is still a work in progress.
+
 ## Installation
 
 `$ npm i simple-recursive-search`
@@ -14,10 +16,11 @@ Get paths to file and directories.
 ## Usage
 
 ```js
-import { myModule } from 'simple-recursive-search';
+import { search } from "simple-recursive-search";
 
-const result = myModule(args);
-// result is ...
+const result = search(args).then((result) => {
+  console.log(result);
+});
 ```
 
 ## License
@@ -32,3 +35,7 @@ const result = myModule(args);
 [codecov-url]: https://codecov.io/gh/santimirandarp/simple-recursive-search
 [download-image]: https://img.shields.io/npm/dm/simple-recursive-search.svg
 [download-url]: https://www.npmjs.com/package/simple-recursive-search
+
+```
+
+```

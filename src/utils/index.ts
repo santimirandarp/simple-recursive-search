@@ -1,2 +1,2 @@
-export * from "./innerSearch";
-export * from "./makeOptions";
+export * from './innerSearch';
+export * from './makeOptions';
