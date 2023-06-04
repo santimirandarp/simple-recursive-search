@@ -1,24 +1,24 @@
-import { type SearchOptions } from './types';
-import { makeOptions, innerSearch } from './utils';
+import { type SearchOptions } from "./types";
+import { makeOptions, innerSearch } from "./utils";
 /**
- * Relative to the base directory.
+ *  From the base directory.
  */
-type RelativePath = string;
+type Path = string;
 /**
- * Recursively search and retrieve full paths.
+ * Recursively search and retrieve paths.
  * @param baseDirectoryPath - path to the base directory
  * @param options - search options {@link SearchOptions}
- * @returns array of paths
+ * @returns Array of paths
  */
 export async function search(
   baseDirectoryPath: string,
-  options: Partial<SearchOptions> = {},
-): Promise<RelativePath[]> {
+  options: Partial<SearchOptions> = {}
+): Promise<Path[]> {
   const filepaths: string[] = [];
   const results = await innerSearch(
     baseDirectoryPath,
     filepaths,
-    makeOptions(options),
+    makeOptions(options)
   );
   return results;
 }

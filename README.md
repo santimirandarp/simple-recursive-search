@@ -5,9 +5,11 @@
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-Get paths to file and directories.
+Simple and lightweight tool to recursively read directories.
 
-This is still a work in progress.
+It will return any files and optionally dotfiles, and optionally directories. You can filter all by name as well.
+
+This is still a very unreliable version.
 
 ## Installation
 
@@ -15,7 +17,7 @@ This is still a work in progress.
 
 ## Usage
 
-```js
+```typescript
 import { search } from "simple-recursive-search";
 
 const result = search(args).then((result) => {
