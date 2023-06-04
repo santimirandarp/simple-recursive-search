@@ -4,11 +4,11 @@
     "checkJs": true,
     "esModuleInterop": true,
     "moduleResolution": "node16",
-    "outDir": "lib",
+    "outDir": "../lib",
     "sourceMap": true,
     "strict": true,
     "target": "es2020"
   },
   "include": ["../src/**/*"],
-  "exclude": ["./src/**/__tests__"]
+  "exclude": ["../src/**/__tests__"]
 }
