@@ -5,7 +5,7 @@
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-Simple and lightweight tool to recursively retrieve file and directory paths.
+Simple and lightweight NodeJS tool to recursively retrieve file and directory paths.
 
 It will return any files and optionally dotfiles, and optionally directories. You can filter all by name as well.
 
