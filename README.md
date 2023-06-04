@@ -20,7 +20,7 @@ This is still a very unreliable version.
 ```typescript
 import { search } from "simple-recursive-search";
 
-const result = search(args).then((result) => {
+search(args).then((result) => {
   console.log(result);
 });
 ```
