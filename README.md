@@ -5,11 +5,9 @@
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-Simple and lightweight NodeJS tool to recursively retrieve file and directory paths.
+Async function that retrieves file and directory paths.
 
-It will return any files and optionally dotfiles, and optionally directories. You can filter all by name as well.
-
-This is still a very unreliable version.
+This is still an experimental version.
 
 ## Installation
 
@@ -18,9 +16,15 @@ This is still a very unreliable version.
 ## Usage
 
 ```typescript
-import { search } from "simple-recursive-search";
+import { search: recursiveSearch } from "simple-recursive-search";
 
-search(args).then((result) => {
+recursiveSearch(".",{
+  excludeDir:(dirname) => /node_modules/.test(dirname),
+  excludeFile:(filename) => filename.endsWith(".jpg"),
+  files:true,// default, dont need to pass
+  directories:false//default, dont need to pass
+  dotFiles:false//default, dont need to pass
+}).then((result) => {
   console.log(result);
 });
 ```
