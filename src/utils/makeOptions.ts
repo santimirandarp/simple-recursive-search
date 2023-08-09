@@ -1,4 +1,4 @@
-import { type SearchOptions } from '../types';
+import { type SearchOptions } from '../search';
 
 /**
  * Make search options by overwriting default options.
@@ -7,10 +7,10 @@ import { type SearchOptions } from '../types';
  */
 export function makeOptions(options: Partial<SearchOptions>): SearchOptions {
   return {
-    filterFilename: null,
-    filterDirname: null,
-    directories: false,
-    files: true,
+    excludeFilename: null,
+    excludeDir: null,
+    wantDirectories: false,
+    wantFiles: true,
     dotFiles: false,
     ...options,
   };

@@ -12,7 +12,10 @@ describe('search', () => {
     }
   });
   it('Return only directories', async () => {
-    const paths = await search(baseDir, { files: false, directories: true });
+    const paths = await search(baseDir, {
+      wantFiles: false,
+      wantDirectories: true,
+    });
     const expectedPaths = ['./subdata', './subdata/subdata2'];
     for (const ep of expectedPaths) {
       expect(paths).toContain(join(baseDir, ep));
@@ -20,7 +23,7 @@ describe('search', () => {
   });
   it('Return only jpg files', async () => {
     const paths = await search(baseDir, {
-      filterFilename: (name) => name.endsWith('.jpg'),
+      excludeFilename: (name) => !name.endsWith('.jpg'),
     });
 
     const expectedPath = './subdata/b.jpg';
@@ -28,9 +31,9 @@ describe('search', () => {
   });
   it('Return all but a single filtered directory', async () => {
     const paths = await search(baseDir, {
-      filterDirname: (name) => name !== 'subdata2',
-      files: true,
-      directories: true,
+      excludeDir: (name) => name === 'subdata2',
+      wantFiles: true,
+      wantDirectories: true,
       dotFiles: true,
     });
 

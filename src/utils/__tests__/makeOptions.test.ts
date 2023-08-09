@@ -5,24 +5,24 @@ describe('makeOptions', () => {
   test('should return default options', () => {
     const options = makeOptions({});
     expect(options).toEqual({
-      filterFilename: null,
-      filterDirname: null,
-      directories: false,
-      files: true,
+      excludeFilename: null,
+      excludeDir: null,
+      wantDirectories: false,
+      wantFiles: true,
       dotFiles: false,
     });
   });
   test('should return overwritten options', () => {
     const options = makeOptions({
-      directories: true,
+      wantDirectories: true,
       dotFiles: true,
-      filterDirname: (name) => name !== 'node_modules',
+      excludeDir: (name) => name === 'node_modules',
     });
     expect(options).toEqual({
-      filterFilename: null,
-      filterDirname: expect.any(Function),
-      directories: true,
-      files: true,
+      excludeFilename: null,
+      excludeDir: expect.any(Function),
+      wantDirectories: true,
+      wantFiles: true,
       dotFiles: true,
     });
   });
