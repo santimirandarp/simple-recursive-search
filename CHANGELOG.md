@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.0](https://github.com/santimirandarp/simple-recursive-search/compare/v2.0.0...v3.0.0) (2023-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* types and very
+
+### Bug Fixes
+
+* naming and minor changes ([7382bc3](https://github.com/santimirandarp/simple-recursive-search/commit/7382bc35a64f1460db1c4b0e9723a407284d971e))
+* types and very ([02361e2](https://github.com/santimirandarp/simple-recursive-search/commit/02361e2c7282a800532eab582b4f16b168977725))
+
 ## [2.0.0](https://github.com/santimirandarp/simple-recursive-search/compare/v1.0.1...v2.0.0) (2023-08-10)
 
 

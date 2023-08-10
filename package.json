@@ -1,6 +1,6 @@
 {
   "name": "simple-recursive-search",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Recursively read directories but simple.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
