@@ -40,8 +40,8 @@ recursiveSearch(".",{
 
 Or using `await`
 
+```typescript
 import { search: recursiveSearch } from "simple-recursive-search";
-```
 async function run(){
 const listOfFilesMatched = await recursiveSearch(".",{
   excludeDirs:(dirname) => /node_modules/.test(dirname)
