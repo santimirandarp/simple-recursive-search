@@ -20,7 +20,7 @@ import { search: recursiveSearch } from "simple-recursive-search";
 
 recursiveSearch(".",{
   excludeDir:(dirname) => /node_modules/.test(dirname),
-  excludeFile:(filename) => filename.endsWith(".jpg"),
+  excludeFilename:(filename) => filename.endsWith(".jpg"),
   files:true,// default, dont need to pass
   directories:false//default, dont need to pass
   dotFiles:false//default, dont need to pass
