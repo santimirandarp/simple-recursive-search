@@ -31,9 +31,9 @@ export interface SearchOptions {
    * `null` will not exclude any files.
    * Not applied to the path, just to the filename.
    * Excludes any file that matches the condition.
-   * @example excludeFilename: (filename) => filename.startsWith('sample')
+   * @example excludeFiles: (filename) => filename.startsWith('sample')
    * Another example, return only jpg files
-   * @example excludeFilename: (name) => !name.endsWith('.jpg'),
+   * @example excludeFiles: (name) => !name.endsWith('.jpg'),
    */
   excludeFiles: ((filename: string) => boolean) | null;
   /**
@@ -41,7 +41,7 @@ export interface SearchOptions {
    * `null` will not exclude any directory.
    * Not applied to the path, just to the dirname.
    * Excludes any directory that matches the condition.
-   * @example excludeDir: (dirname) => /node_modules/.test(dirname)
+   * @example excludeDirs: (dirname) => /node_modules/.test(dirname)
    */
   excludeDirs: ((dirname: string) => boolean) | null;
   /**
@@ -68,7 +68,7 @@ async function innerSearch(
   const baseDir = await opendir(baseDirectoryPath, {
     encoding: 'utf8',
   });
-  const { excludeDir, excludeFilename, wantDirectories, wantFiles, dotFiles } =
+  const { excludeDirs, excludeFiles, wantDirectories, wantFiles, dotFiles } =
     options;
 
   for await (const dir of baseDir) {
@@ -79,10 +79,10 @@ async function innerSearch(
     const path = join(baseDirectoryPath, iName);
 
     if (dir.isFile() && wantFiles) {
-      const passes = !excludeFilename || !excludeFilename(iName);
+      const passes = !excludeFiles || !excludeFiles(iName);
       if (passes) filepaths.push(path);
     } else if (dir.isDirectory()) {
-      if (excludeDir && excludeDir(iName)) {
+      if (excludeDirs && excludeDirs(iName)) {
         continue;
       } else if (wantDirectories) {
         filepaths.push(path);

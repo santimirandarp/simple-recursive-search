@@ -5,8 +5,8 @@ describe('makeOptions', () => {
   test('should return default options', () => {
     const options = makeOptions({});
     expect(options).toEqual({
-      excludeFilename: null,
-      excludeDir: null,
+      excludeFiles: null,
+      excludeDirs: null,
       wantDirectories: false,
       wantFiles: true,
       dotFiles: false,
@@ -16,11 +16,11 @@ describe('makeOptions', () => {
     const options = makeOptions({
       wantDirectories: true,
       dotFiles: true,
-      excludeDir: (name) => name === 'node_modules',
+      excludeDirs: (name) => name === 'node_modules',
     });
     expect(options).toEqual({
-      excludeFilename: null,
-      excludeDir: expect.any(Function),
+      excludeFiles: null,
+      excludeDirs: expect.any(Function),
       wantDirectories: true,
       wantFiles: true,
       dotFiles: true,

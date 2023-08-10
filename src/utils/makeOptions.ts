@@ -7,8 +7,8 @@ import { type SearchOptions } from '../search';
  */
 export function makeOptions(options: Partial<SearchOptions>): SearchOptions {
   return {
-    excludeFilename: null,
-    excludeDir: null,
+    excludeFiles: null,
+    excludeDirs: null,
     wantDirectories: false,
     wantFiles: true,
     dotFiles: false,
