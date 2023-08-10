@@ -27,29 +27,35 @@ export async function search(
 
 export interface SearchOptions {
   /**
-   * default: null
+   * @default: null
+   * `null` will not exclude any files.
    * Not applied to the path, just to the filename.
+   * Excludes any file that matches the condition.
    * @example excludeFilename: (filename) => filename.startsWith('sample')
    * Another example, return only jpg files
    * @example excludeFilename: (name) => !name.endsWith('.jpg'),
    */
-  excludeFilename: ((filename: string) => boolean) | null;
+  excludeFiles: ((filename: string) => boolean) | null;
   /**
-   * default: null
+   * @default: null
+   * `null` will not exclude any directory.
    * Not applied to the path, just to the dirname.
+   * Excludes any directory that matches the condition.
    * @example excludeDir: (dirname) => /node_modules/.test(dirname)
    */
-  excludeDir: ((dirname: string) => boolean) | null;
+  excludeDirs: ((dirname: string) => boolean) | null;
   /**
-   * default: false
+   * @default: false
+   * If you want directories in the results.
    */
   wantDirectories: boolean;
   /**
-   * default: true
+   * @default: true
+   * If you want directories in the results.
    */
   wantFiles: boolean;
   /**
-   * default: false
+   * @default: false
    */
   dotFiles: boolean;
 }
