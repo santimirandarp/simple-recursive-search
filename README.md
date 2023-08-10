@@ -9,6 +9,14 @@ Async function that retrieves file and directory paths.
 
 This is still an experimental version.
 
+This retrieves the relative path (not just the filenames.), so it's simple to:
+
+* rename,
+*  move
+*  or change these files.
+
+Currently it will descend up to the last directory in a tree. A safety limit `depth` may be added soon.
+
 ## Installation
 
 `$ npm i simple-recursive-search`
@@ -19,14 +27,26 @@ This is still an experimental version.
 import { search: recursiveSearch } from "simple-recursive-search";
 
 recursiveSearch(".",{
-  excludeDir:(dirname) => /node_modules/.test(dirname),
-  excludeFilename:(filename) => filename.endsWith(".jpg"),
-  files:true,// default, dont need to pass
-  directories:false//default, dont need to pass
+  excludeDirs:(dirname) => /node_modules/.test(dirname),
+  excludeFiles:(filename) => filename.endsWith(".jpg"),
+  wantFiles:true,// default, dont need to pass
+  wantDirectories:false//default, dont need to pass
   dotFiles:false//default, dont need to pass
-}).then((result) => {
-  console.log(result);
+}).then((matches) => {
+  console.log(matches);
 });
+
+```
+
+Or using `await`
+
+import { search: recursiveSearch } from "simple-recursive-search";
+```
+async function run(){
+const listOfFilesMatched = await recursiveSearch(".",{
+  excludeDirs:(dirname) => /node_modules/.test(dirname)
+})}
+console.log(listOfFilesMatched)
 ```
 
 ## License
