@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.0](https://github.com/santimirandarp/simple-recursive-search/compare/v1.0.1...v2.0.0) (2023-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* error in directory exclusion and change API
+
+### Bug Fixes
+
+* descriptive readme ([fe02678](https://github.com/santimirandarp/simple-recursive-search/commit/fe026785abeab5667a8bf7d96e946efce87d7041))
+* error in directory exclusion and change API ([6594aaa](https://github.com/santimirandarp/simple-recursive-search/commit/6594aaa23e5092af4a033f1c14bb257562e32af3))
+* Update README.md ([73c011f](https://github.com/santimirandarp/simple-recursive-search/commit/73c011f09a1b50ef04bcb771ec5433cc52f57494))
+
 ## [1.0.1](https://github.com/santimirandarp/simple-recursive-search/compare/v1.0.0...v1.0.1) (2023-06-04)
 
 
